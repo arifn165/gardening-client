@@ -11,6 +11,7 @@ import AppDetails from "../pages/AppDetails";
 import PrivateRoute from "./PrivateRoute";
 import GardeningTips from "../pages/GardeningTips";
 import Resources from "../pages/Resources";
+import ProfileEdit from "../pages/ProfileEdit";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +36,12 @@ const router = createBrowserRouter([
                     <Profile></Profile>
                 </PrivateRoute>
             ),
+        },
+        {
+            path:"/profile/edit",
+            Component:<PrivateRoute>
+                <ProfileEdit></ProfileEdit>
+            </PrivateRoute>,
         },
         {
             path:"/appdetails",

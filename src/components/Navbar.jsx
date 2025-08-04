@@ -49,7 +49,14 @@ const Navbar = () => {
     <div className="flex-1 flex justify-end items-center gap-3">
       {user ? (
         <>
-          <span className="hidden md:inline">{user.email}</span>
+      <span className="hidden md:inline font-semibold">{user.displayName}</span>
+      {user.photoURL && (
+        <img
+          src={user.photoURL}
+          alt="User"
+          className="w-10 h-10 rounded-full border-2 border-white"
+        />
+      )}
           <button
             onClick={handleLogout}
             className="bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
