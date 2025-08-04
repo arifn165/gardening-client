@@ -1,23 +1,40 @@
 const gardeningTips = [
   {
     id: 1,
-    title: "Proper Watering",
-    description: "Water your plants early in the morning to reduce evaporation.",
-    image: "https://source.unsplash.com/400x300/?watering",
+    title: "Water plants regularly",
+    category: "Watering",
+    photo: "https://i.ibb.co.com/Qjx0Zymr/2.jpg",
   },
   {
     id: 2,
-    title: "Use Organic Fertilizer",
-    description: "Organic fertilizers enrich the soil naturally and improve plant health.",
-    image: "https://source.unsplash.com/400x300/?fertilizer",
+    title: "Use organic fertilizer",
+    category: "Fertilizer",
+    photo: "https://i.ibb.co.com/ZRVCK2mX/3.jpg",
   },
   {
     id: 3,
-    title: "Prune Regularly",
-    description: "Pruning helps to remove dead parts and encourages new growth.",
-    image: "https://source.unsplash.com/400x300/?pruning",
+    title: "Prune dead leaves",
+    category: "Pruning",
+    photo: "https://i.ibb.co.com/Q7HypTvC/5.jpg",
   },
-  // Add more tips as needed
+  {
+    id: 4,
+    title: "Protect from pests",
+    category: "Pests",
+    photo: "https://i.ibb.co.com/TxRbr7vn/4.jpg",
+  },
+  {
+    id: 5,
+    title: "Use mulch to retain moisture",
+    category: "Soil Care",
+    photo: "https://i.ibb.co.com/rGwrBcPp/6.jpg",
+  },
+  {
+    id: 6,
+    title: "Rotate your crops seasonally",
+    category: "Crop Rotation",
+    photo: "https://i.ibb.co.com/wN8brMpk/images.jpg",
+  },
 ];
 
 export default gardeningTips;
