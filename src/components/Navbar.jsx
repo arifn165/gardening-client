@@ -1,51 +1,73 @@
-import React from 'react';
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
-    return (
-        <div>
-            <div className="navbar bg-base-100 shadow-sm">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-      </div>
-      <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
+  const { user, logout } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout()
+      .then(() => {
+        console.log("Logout successful");
+      })
+      .catch((err) => {
+        console.error(err.message);
+      });
+  };
+
+  const navLinks = (
+    <>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/gardening-tips">Gardening Tips</Link>
+      </li>
+      <li>
+        <Link to="/resources">Resources</Link>
+      </li>
+      {user && (
         <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
+          <Link to="/profile">Profile</Link>
         </li>
-        <li><a>Item 3</a></li>
+      )}
+    </>
+  );
+
+  return (
+  <div className="navbar bg-green-700 text-white px-4 py-2 flex items-center justify-between">
+    <div className="flex-1">
+      <Link to="/" className="text-2xl font-bold">🌿 Gardening Hub</Link>
+    </div>
+
+    <div className="flex-1">
+      <ul className="menu menu-horizontal px-1 gap-4 justify-center hidden md:flex">
+        {navLinks}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+
+    <div className="flex-1 flex justify-end items-center gap-3">
+      {user ? (
+        <>
+          <span className="hidden md:inline">{user.email}</span>
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 hover:bg-red-600 px-3 py-1 rounded"
+          >
+            Logout
+          </button>
+        </>
+      ) : (
+        <>
+          <Link to="/login" className="bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded">Login</Link>
+          <Link to="/register" className="bg-gray-500 hover:bg-gray-600 px-3 py-1 rounded">Register</Link>
+        </>
+      )}
+    </div>
   </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
-  </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
-  </div>
-</div>
-        </div>
-    );
+);
+
+
 };
 
 export default Navbar;

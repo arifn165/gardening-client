@@ -8,6 +8,9 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import AppDetails from "../pages/AppDetails";
+import PrivateRoute from "./PrivateRoute";
+import GardeningTips from "../pages/GardeningTips";
+import Resources from "../pages/Resources";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,12 +30,28 @@ const router = createBrowserRouter([
         },
         {
             path:"/profile",
-            Component:Profile,
+            Component:() => (
+                <PrivateRoute>
+                    <Profile></Profile>
+                </PrivateRoute>
+            ),
         },
         {
             path:"/appdetails",
-            Component:AppDetails,
+            Component:() => (
+                <PrivateRoute>
+                    <AppDetails></AppDetails>
+                </PrivateRoute>
+            ),
         },
+        {
+            path:"/gardening-tips",
+            Component:GardeningTips,
+        },
+        {
+            path:"/resources",
+            Component:Resources,
+        }
     ]
   },
 ]);

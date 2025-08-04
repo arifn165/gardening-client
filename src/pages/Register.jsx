@@ -13,8 +13,11 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const ConfirmPassword = form.ConfirmPassword.value;
-
-    createUser(email, password ,ConfirmPassword)
+      if (password !== ConfirmPassword) {
+    setError("Passwords do not match!");
+    return;
+  }
+    createUser(email, password)
       .then(() => {
         navigate("/");
       })
@@ -27,7 +30,7 @@ const Register = () => {
     <div className="max-w-md mx-auto my-10 p-6 shadow-md border rounded-xl bg-gray-900">
       <h2 className="text-2xl font-bold mb-4 text-white text-center">Register</h2>
       <form onSubmit={handleRegister} className="space-y-4">
-        <input name="email" type="email" placeholder="User Name :" className="w-full border border-amber-400 text-white p-2" required />
+        <input name="email" type="text" placeholder="User Name :" className="w-full border border-amber-400 text-white p-2" required />
         <input name="email" type="email" placeholder="Email" className="w-full border border-amber-400 text-white p-2" required />
         <input name="password" type="password" placeholder="Password" className="w-full border border-amber-400 text-white p-2" required />
         <input name="ConfirmPassword" type="Password" placeholder="Confirm Password" className="w-full border border-amber-400 text-white p-2 " required />
