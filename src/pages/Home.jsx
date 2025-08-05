@@ -18,7 +18,7 @@ const Home = () => {
       id: 2,
       title: "Composting Basics",
       description: "Learn how to make your own compost at home.",
-      image: "https://images.unsplash.com/photo-1447933608677-5f9d4b5183a3?auto=format&fit=crop&w=800&q=60",
+      image: "https://i.ibb.co.com/qLCd1nn8/Composting.jpg",
       buttonText: "Read More",
       buttonLink: "/tips/composting-basics",
     },
@@ -84,38 +84,38 @@ const Home = () => {
     const fetchedTips = [
       {
         id: 1,
-        title: "How to Grow Tomatoes Indoors",
+        title: "Grow Tomatoes Indoors",
         category: "Plant Care",
         image:
-          "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=800&q=60",
+          "https://i.ibb.co.com/Mk8xSp8P/tomato.jpg",
       },
       {
         id: 2,
-        title: "Composting 101",
+        title: "Composting",
         category: "Composting",
         image:
-          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60",
+          "https://i.ibb.co.com/qLCd1nn8/Composting.jpg",
       },
       {
         id: 3,
         title: "Vertical Gardening Tips",
         category: "Vertical Gardening",
         image:
-          "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60",
+          "https://i.ibb.co.com/2BhPDS8/Vertical-Gardening.webp",
       },
       {
         id: 4,
         title: "Hydroponics for Beginners",
         category: "Hydroponics",
         image:
-          "https://images.unsplash.com/photo-1496610407110-2f2605ab6698?auto=format&fit=crop&w=800&q=60",
+          "https://i.ibb.co.com/6c7MBpqW/hydor.jpg",
       },
       {
         id: 5,
         title: "Best Plants for Balcony Gardens",
         category: "Balcony Gardens",
         image:
-          "https://images.unsplash.com/photo-1516707570265-8a8ec67b6d36?auto=format&fit=crop&w=800&q=60",
+          "https://i.ibb.co.com/CKcCPGGw/belcony.jpg",
       },
       {
         id: 6,
