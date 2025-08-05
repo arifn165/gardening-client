@@ -10,7 +10,8 @@ const Home = () => {
       id: 1,
       title: "Summer Gardening Event",
       description: "Join our summer gardening workshop and learn new tips.",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=60",
       buttonText: "Register Now",
       buttonLink: "/events/summer",
     },
@@ -19,23 +20,24 @@ const Home = () => {
       title: "Composting Basics",
       description: "Learn how to make your own compost at home.",
       image: "https://i.ibb.co.com/qLCd1nn8/Composting.jpg",
-      buttonText: "Read More",
+      buttonText: "Register Now",
       buttonLink: "/tips/composting-basics",
     },
     {
       id: 3,
       title: "Hydroponics Demo",
       description: "Discover the future of soil-less gardening.",
-      image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60",
-      buttonText: "Join Demo",
+      image:
+        "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60",
+      buttonText: "Register Now",
       buttonLink: "/events/hydroponics-demo",
     },
   ];
-
+  
   const [gardeners, setGardeners] = useState([]);
 
   const [tips, setTips] = useState([]);
- useEffect(() => {
+  useEffect(() => {
     const fetchedGardeners = [
       {
         id: 1,
@@ -86,36 +88,36 @@ const Home = () => {
         id: 1,
         title: "Grow Tomatoes Indoors",
         category: "Plant Care",
-        image:
-          "https://i.ibb.co.com/Mk8xSp8P/tomato.jpg",
+        image: "https://i.ibb.co.com/Mk8xSp8P/tomato.jpg",
+        link: "https://jobescompany.com/how-to/grow-tomatoes-indoors/",
       },
       {
         id: 2,
         title: "Composting",
         category: "Composting",
-        image:
-          "https://i.ibb.co.com/qLCd1nn8/Composting.jpg",
+        image: "https://i.ibb.co.com/qLCd1nn8/Composting.jpg",
+        link: "https://www.nrdc.org/stories/composting-101",
       },
       {
         id: 3,
         title: "Vertical Gardening Tips",
         category: "Vertical Gardening",
-        image:
-          "https://i.ibb.co.com/2BhPDS8/Vertical-Gardening.webp",
+        image: "https://i.ibb.co.com/2BhPDS8/Vertical-Gardening.webp",
+        link: "https://rootsandrefuge.com/vertical-gardening-on-a-budget/",
       },
       {
         id: 4,
         title: "Hydroponics for Beginners",
         category: "Hydroponics",
-        image:
-          "https://i.ibb.co.com/6c7MBpqW/hydor.jpg",
+        image: "https://i.ibb.co.com/6c7MBpqW/hydor.jpg",
+        link: "https://www.epicgardening.com/hydroponics-for-beginners/",
       },
       {
         id: 5,
         title: "Best Plants for Balcony Gardens",
         category: "Balcony Gardens",
-        image:
-          "https://i.ibb.co.com/CKcCPGGw/belcony.jpg",
+        image: "https://i.ibb.co.com/CKcCPGGw/belcony.jpg",
+        link: "https://www.gardendesign.com/small/balcony-garden.html",
       },
       {
         id: 6,
@@ -123,6 +125,7 @@ const Home = () => {
         category: "Plant Care",
         image:
           "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60",
+        link: "https://www.succulentsandsunshine.com/how-to-water-succulent-plants/",
       },
     ];
     setTips(fetchedTips);
@@ -142,14 +145,19 @@ const Home = () => {
       <section className="mb-12">
         <Slider {...sliderSettings}>
           {sliderData.map((slide) => (
-            <div key={slide.id} className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
+            <div
+              key={slide.id}
+              className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg"
+            >
               <img
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-full object-cover brightness-75"
               />
               <div className="absolute inset-0 flex flex-col justify-center items-start px-8 text-white">
-                <h2 className="text-3xl md:text-5xl font-bold mb-2">{slide.title}</h2>
+                <h2 className="text-3xl md:text-5xl font-bold mb-2">
+                  {slide.title}
+                </h2>
                 <p className="mb-4 max-w-lg">{slide.description}</p>
                 <a
                   href={slide.buttonLink}
@@ -166,15 +174,22 @@ const Home = () => {
         <h2 className="text-2xl font-semibold mb-6">Featured Gardeners</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {gardeners.map((gardener) => (
-            <div key={gardener.id} className="bg-white rounded shadow p-4 flex flex-col items-center">
+            <div
+              key={gardener.id}
+              className="bg-white rounded shadow p-4 flex flex-col items-center"
+            >
               <img
                 src={gardener.image}
                 alt={gardener.name}
                 className="w-24 h-24 rounded-full object-cover mb-4"
               />
               <h3 className="text-lg font-semibold">{gardener.name}</h3>
-              <p className="text-sm text-gray-600">{gardener.experience} experience</p>
-              <p className="text-green-600 font-semibold mt-2">{gardener.status.toUpperCase()}</p>
+              <p className="text-sm text-gray-600">
+                {gardener.experience} experience
+              </p>
+              <p className="text-green-600 font-semibold mt-2">
+                {gardener.status.toUpperCase()}
+              </p>
             </div>
           ))}
         </div>
@@ -183,26 +198,38 @@ const Home = () => {
         <h2 className="text-2xl font-semibold mb-6">Top Trending Tips</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {tips.map((tip) => (
-            <div key={tip.id} className="bg-white rounded shadow overflow-hidden">
-              <img src={tip.image} alt={tip.title} className="w-full h-48 object-cover" />
+            <div
+              key={tip.id}
+              className="bg-white rounded shadow overflow-hidden"
+            >
+              <img
+                src={tip.image}
+                alt={tip.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-4">
                 <h3 className="text-lg font-semibold">{tip.title}</h3>
                 <p className="text-sm text-gray-500">{tip.category}</p>
-                <button
-                  className="mt-2 text-green-600 font-semibold hover:underline"
-                  onClick={() => alert(`See more about: ${tip.title}`)}
-                >
-                  See More
-                </button>
+<a
+  href={tip.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-2 text-green-600 font-semibold hover:underline inline-block"
+>
+  See More
+</a>
               </div>
             </div>
           ))}
         </div>
       </section>
       <section className="mb-12 bg-green-50 p-6 rounded shadow">
-        <h2 className="text-2xl font-semibold mb-4">Gardening Tools You Need</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          Gardening Tools You Need
+        </h2>
         <p className="mb-2">
-          Discover essential gardening tools to make your gardening easier and more enjoyable.
+          Discover essential gardening tools to make your gardening easier and
+          more enjoyable.
         </p>
         <ul className="list-disc list-inside">
           <li>Pruning Shears</li>
@@ -213,10 +240,12 @@ const Home = () => {
         </ul>
       </section>
       <section className="mb-12 bg-green-50 p-6 rounded shadow">
-        <h2 className="text-2xl font-semibold mb-4">Join Our Community Events</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          Join Our Community Events
+        </h2>
         <p>
-          Participate in local gardening events and workshops to meet other enthusiasts and
-          expand your skills.
+          Participate in local gardening events and workshops to meet other
+          enthusiasts and expand your skills.
         </p>
       </section>
     </div>
