@@ -9,6 +9,7 @@ const Resources = () => {
       <AddResource />
       <ResourceList />
     </div>
+    
   );
 };
 

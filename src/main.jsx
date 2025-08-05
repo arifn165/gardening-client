@@ -7,6 +7,7 @@ import router from "./routes/router.jsx";
 import AuthProvider from "./context/AuthContext.jsx";
 import { ResourceProvider } from "./context/ResourceContext.jsx";
 
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
